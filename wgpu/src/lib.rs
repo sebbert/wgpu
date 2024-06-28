@@ -24,6 +24,9 @@ pub mod util;
 #[macro_use]
 mod macros;
 
+#[cfg(webgpu)]
+pub mod webgpu_ext;
+
 use std::{
     any::Any,
     borrow::Cow,

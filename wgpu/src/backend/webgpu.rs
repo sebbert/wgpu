@@ -1,7 +1,7 @@
 #![allow(clippy::type_complexity)]
 
 mod ext_bindings;
-mod webgpu_sys;
+pub(crate) mod webgpu_sys;
 
 use js_sys::Promise;
 use std::{
@@ -60,7 +60,7 @@ impl<T> From<Identified<T>> for ObjectId {
 }
 
 #[derive(Clone, Debug)]
-pub(crate) struct Sendable<T>(T);
+pub(crate) struct Sendable<T>(pub(crate) T);
 #[cfg(send_sync)]
 unsafe impl<T> Send for Sendable<T> {}
 #[cfg(send_sync)]
