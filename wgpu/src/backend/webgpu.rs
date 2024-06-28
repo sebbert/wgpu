@@ -3,7 +3,7 @@
 mod defined_non_null_js_value;
 mod ext_bindings;
 #[allow(clippy::allow_attributes)]
-mod webgpu_sys;
+pub(crate) mod webgpu_sys;
 
 use alloc::{
     boxed::Box,

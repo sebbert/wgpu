@@ -122,6 +122,22 @@ pub mod util;
 // Public re-exports
 //
 //
+#[cfg(webgpu)]
+pub mod webgpu_ext;
+
+use std::{
+    any::Any,
+    borrow::Cow,
+    cmp::Ordering,
+    collections::HashMap,
+    error, fmt,
+    future::Future,
+    marker::PhantomData,
+    num::{NonZeroU32, NonZeroU64},
+    ops::{Bound, Deref, DerefMut, Range, RangeBounds},
+    sync::Arc,
+    thread,
+};
 
 #[cfg(custom)]
 pub use backend::custom;
